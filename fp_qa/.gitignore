@@ -1,0 +1,15 @@
+**/.DS_Store
+**/.idea
+**/data
+**/dense_data
+**/log
+**/__pycache__
+*.th
+*.pyc
+*.zip
+*.ipynb
+**/hw1_solution
+**/hw2_solution
+**/hw3_solution
+#**/test_csv_2
+
