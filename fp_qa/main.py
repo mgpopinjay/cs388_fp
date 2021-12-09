@@ -58,7 +58,7 @@ parser.add_argument(
     '--model',
     type=str,
     required=True,
-    choices=['baseline'],
+    choices=['baseline', 'enhanced'],
     help='which model to use'
 )
 parser.add_argument(
@@ -71,7 +71,7 @@ parser.add_argument(
     '--embedding_path',
     type=str,
     default='glove/glove.6B.300d.txt',
-    help='GloVe embedding path',
+    help='Embedding path',
 )
 parser.add_argument(
     '--train_path',
@@ -194,6 +194,16 @@ parser.add_argument(
     help='dropout on passage and question vectors',
 )
 
+parser.add_argument(
+    '--pretrained_path',
+    type=str,
+    required=False,
+    help='pretrained model path',
+)
+
+
+
+
 def _print_arguments(args):
     """Pretty prints command line args to stdout.
 
@@ -219,6 +229,10 @@ def _select_model(args):
     """
     if args.model == 'baseline':
         return BaselineReader(args)
+
+    elif args.model == 'enhanced':
+        return EnhancedReader(args)
+
     else:
         raise RuntimeError(f'model \'{args.model}\' not recognized!')
 
@@ -478,7 +492,14 @@ def main(args):
     print()
 
     # Select model.
-    model = _select_model(args)
+    if args.pretrained_path:
+        print("\n=> using pre-trained model '{}'".format(args.pretrained_path))
+        model = torch.load(args.pretrained_path, map_location=torch.device('cpu'))
+    else:
+        print("\n=> creating new model")
+        model = _select_model(args)
+
+    # model = _select_model(args)
     num_pretrained = model.load_pretrained_embeddings(
         vocabulary, args.embedding_path
     )
