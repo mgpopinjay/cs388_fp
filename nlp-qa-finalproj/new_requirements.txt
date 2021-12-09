@@ -1,0 +1,11 @@
+blessings
+gpustat
+numpy
+nvidia-ml-py3
+psutil
+six
+termcolor
+torch
+tqdm
+spacy
+allennlp
