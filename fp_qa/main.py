@@ -492,14 +492,16 @@ def main(args):
     print()
 
     # Select model.
+
+    model = _select_model(args)
+
     if args.pretrained_path:
         print("\n=> using pre-trained model '{}'".format(args.pretrained_path))
-        model = torch.load(args.pretrained_path, map_location=torch.device('cpu'))
+        model.load_state_dict(torch.load(args.pretrained_path, map_location=torch.device('cpu')))
     else:
         print("\n=> creating new model")
-        model = _select_model(args)
 
-    # model = _select_model(args)
+
     num_pretrained = model.load_pretrained_embeddings(
         vocabulary, args.embedding_path
     )
