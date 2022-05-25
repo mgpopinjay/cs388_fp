@@ -7,5 +7,5 @@ The experiment used [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/), based 
 
 The revised model, a SQuAD(BioReddit) baseline fine-tuned with OD BioASQ data, achieved a score gain of +7.22 F1 and +3.0 EM over the baseline model in OD performance on BioASQ data. Meanwhile, the OD fine-tuning of a SQuAD (GloVe) baseline led to a gain of +5.36 F1 and +.27 EM. Comparing both OD fine-tuning cases, the use of in-domain (ID) word embeddings led to less gain in the EM score compared to the use of OD word embeddings. 
 
-These preliminary results show favorable evidence for OD fine-tuning as a technique for improving the F1 score in OD QA task, and mild evidence for OD word-embedding in improving the EM score. 
+These [preliminary results](https://github.com/mgpopinjay/nlp-qa-outdomain-finetuning/blob/master/nlp_outdomain_qa_report.pdf) show favorable evidence for OD fine-tuning as a technique for improving the F1 score in OD QA task, and mild evidence for OD word-embedding in improving the EM score. 
 
