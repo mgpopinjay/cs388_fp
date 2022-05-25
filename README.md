@@ -1,7 +1,7 @@
 # nlp-qa-outdomain-finetuning
 Out-domain Question Answering (QA) on SQuAD with bi-directional LSTM
 
-This project assessed the effect of applying out-domain(OD) and domain-specific word embeddings and OD fine-tuning to a [Question Answering(QA)](https://en.wikipedia.org/wiki/Question_answering) system.  
+This experiment assessed the effect of applying out-domain(OD) and domain-specific word embeddings and OD fine-tuning to a [Question Answering(QA)](https://en.wikipedia.org/wiki/Question_answering) system.  
 
 The experiment used [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/), based on general questions and answers generated from Wikipedia articles, as its baseline model, and a biomedical-focused QA dataset, [BioASQ](https://paperswithcode.com/dataset/bioasq), for OD QA evaluation. In building a model for OD QA, the performance contributions of non-domain specific ([GloVe](https://nlp.stanford.edu/projects/glove/)) and biomedical-focused (e.g. [BioReddit](https://github.com/basaldella/bioreddit), [BioWordVec](https://github.com/ncbi-nlp/BioWordVec), etc.) word embeddings are compared.  
 
