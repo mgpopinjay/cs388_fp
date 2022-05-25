@@ -1,5 +1,4 @@
-# nlp-qa-outdomain-finetuning
-Out-domain Question Answering (QA) on SQuAD with bi-directional LSTM
+### Out-domain Question Answering (QA) on SQuAD with bi-directional LSTM
 
 This experiment assessed the effect of applying out-domain(OD) and domain-specific word embeddings and OD fine-tuning to a [Question Answering(QA)](https://en.wikipedia.org/wiki/Question_answering) system.  
 
